@@ -1,0 +1,126 @@
+{
+  "Routes": [
+
+    {
+     "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Login/Logging",
+     "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Login/Logging",
+      "UpstreamHttpMethod": [ "Post" ]
+
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Product/GetAllproduct",
+      "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Product/GetAllproduct",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+  
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Product/AddProduct",
+      "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Product/AddProduct",
+      "UpstreamHttpMethod": [ "Post" ]
+
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Product/SearchProductByName",
+      "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Product/SearchProductByName",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Product/ProductUpdateById",
+      "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Product/ProductUpdateById",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Product/ProductDeleteById",
+      "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Product/ProductDeleteById",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Order/OrderAdd",
+      "ServiceName": "Shopping",
+      "DownstreamScheme": "https",
+
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 44359
+      //  }
+      //],
+      "UpstreamPathTemplate": "/api/gatway/Order/OrderAdd",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    }
+  ],
+  "GlobalConfiguration": {
+   // "BaseUrl": "https://localhost:44377",
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}

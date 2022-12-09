@@ -1,0 +1,68 @@
+<app-userheader></app-userheader>
+<section class="mb-5">
+
+    <div class="container mt-7">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow ">
+                    <div class="card-header border-0 ">
+                        <h5 class="mb-0 ">Search Product By Product Name </h5>
+                    </div>
+
+                    <div class="container">
+                      <div class="row text-center" >
+                          <div >
+                            <label class="form-label">PNAME  &nbsp;&nbsp;</label>
+                              <input type="text"  [(ngModel)]="SearchModel.pName"/> 
+                          </div>
+                          <div class="py-4">
+                            <input type="button"  class="btn btn-primary" value="search" (click)="GetSearchData()" />
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="mb-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="card shadow ">
+                  <div class="card-header border-0">
+                      <h5 class="mb-0 ">List oF Product </h5>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+          
+                      <td scope="col">Product Name</td>
+                      <td scope="col">Color</td>
+                      <td scope="col">Type</td>
+                      <td scope="col" >Size</td>
+                      <td scope="col">Price</td>
+                     
+                    </thead>
+        
+        
+                    <tr >
+          
+                      <td>{{srchbk.pName}}</td>
+                      <td>{{srchbk.pColor}}</td>
+                      <td>{{srchbk.pType}}</td>
+                      <td>{{srchbk.pSize}}</td>
+                      <td>{{srchbk.pPrize}}</td>
+                    
+          
+                      <!-- <td><button class="btn btn-danger btn-sm">View Seats</button></td> -->
+                    </tr>
+          
+                  </table>
+                </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </section>

@@ -1,0 +1,94 @@
+
+
+<section class="mb-5">
+    <div class="container mt-7">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow ">
+                    <div class="card-header border-0 ">
+                        <h5 class="mb-0 ">Add product </h5>
+                    </div>
+
+                    <form style="padding:20px">
+                        <div>
+                            <label class="form-label">Product  ID</label>
+                            <input [(ngModel)]="proddata.pId" [ngModelOptions]="{standalone: true}"
+                                class="form-control" type="text" />
+                          
+                        </div>
+                        <div>
+                            <label class="form-label">product Name</label>
+                            <input [(ngModel)]="proddata.pName" [ngModelOptions]="{standalone: true}"
+                                class="form-control" type="text" />
+                           </div>
+
+                        <div>
+                            <label class="form-label">Product Color </label>
+                            <input [(ngModel)]="proddata.pColor" [ngModelOptions]="{standalone: true}"
+                                class="form-control" type="text" />
+                            </div>
+                        <div>
+                            <label class="form-label">Product price</label>
+                            <input [(ngModel)]="proddata.pPrize" [ngModelOptions]="{standalone: true}"
+                                class="form-control" type="text" />
+                              </div>
+                        <div>
+                            <label class="form-label">Product Size</label>
+                            <input [(ngModel)]="proddata.pSize" [ngModelOptions]="{standalone: true}"
+                                class="form-control" type="text" />
+                              </div>
+                        <div>
+                            <label class="form-label"> Product Type</label>
+                            <input [(ngModel)]="proddata.pType" [ngModelOptions]="{standalone: true}"
+                                class="form-control" type="text" />
+                            </div>
+
+                        <div class="py-4">
+                            <input type="submit" class="btn btn-primary" value="Add Product" (click)="Addbooking()" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow ">
+                    <div class="card-header border-0">
+                        <h5 class="mb-0 ">List oF Added Product </h5>
+                    </div>
+                    <div class="table-responsive " style="padding:20px">
+                        <table class="table caption-top">
+                           
+                            <thead class="table-light">
+                                <td>Product Id</td>
+                                <td>Product Name</td>
+                                <td>Color</td>
+                                <td>Price</td>
+                                <td>Size</td>
+                                <td>Type</td>
+                            </thead>
+                            <tr *ngFor="let cust of proddatas" class="table-light">
+
+                                <td>{{cust.pId}}</td>
+                                <td>{{cust.pName}}</td>
+                                <td>{{cust.pColor}}</td>
+                                <td>{{cust.pPrize}}</td>
+                                <td>{{cust.pSize}}</td>
+                                <td>{{cust.pType}}</td>
+                                <td>
+                                    <button type="button" (click)="EditProduct(cust)" class="btn btn-outline-primary"
+                                        style="margin:10px">Edit</button>
+                                    <button type="button" (click)="DeleteProduct(cust)" class="btn btn-outline-primary">Delete</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

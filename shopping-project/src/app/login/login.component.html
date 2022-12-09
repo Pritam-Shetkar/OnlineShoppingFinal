@@ -1,0 +1,38 @@
+
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card border-0">
+            <div class="card-body">
+                <div class="card border border-primary shadow-0 mb-3" style="max-width: 40rem; margin-left:250px;">
+                    <div class="card-header">Login</div>
+                    <div class="card-body text-primary">
+                
+                        <form [formGroup]="loginModel.formLoginGroup">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input [(ngModel)]="loginModel.userName" formControlName="userName"  type="text" class="form-control" />
+                                <p style="color:red" [hidden]="!(hasError('required','userName'))">User name is required</p>
+                                <!-- <p style="color:red" [hidden]="!(hasError('required','UserNameControl'))">Please Enter a User Name</p> -->
+                               
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input [(ngModel)]="loginModel.password"  type="password" formControlName="userName"  class="form-control" />
+                                <p style="color:red" [hidden]="!(hasError('required','userName'))">Password is required</p>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <input type="submit" [disabled]="!(loginModel.formLoginGroup.valid)" style="margin:10px" class="btn btn-primary" value="Login" (click)="Login()" />
+                                
+                            </div>
+                        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
